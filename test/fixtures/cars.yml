@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  object_subdivisiod: MyString
+  date_of_commissioning: 2013-08-18
+  date_warranty: 2013-08-18
+  name_org_warranty: MyString
+
+two:
+  name: MyString
+  object_subdivisiod: MyString
+  date_of_commissioning: 2013-08-18
+  date_warranty: 2013-08-18
+  name_org_warranty: MyString

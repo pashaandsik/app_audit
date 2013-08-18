@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @car.name %>
+</p>
+
+<p>
+  <b>Object subdivisiod:</b>
+  <%= @car.object_subdivisiod %>
+</p>
+
+<p>
+  <b>Date of commissioning:</b>
+  <%= @car.date_of_commissioning %>
+</p>
+
+<p>
+  <b>Date warranty:</b>
+  <%= @car.date_warranty %>
+</p>
+
+<p>
+  <b>Name org warranty:</b>
+  <%= @car.name_org_warranty %>
+</p>
+
+
+<%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Back', cars_path %>

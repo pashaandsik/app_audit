@@ -1,0 +1,31 @@
+<h1>Listing cars</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Object subdivisiod</th>
+    <th>Date of commissioning</th>
+    <th>Date warranty</th>
+    <th>Name org warranty</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cars.each do |car| %>
+  <tr>
+    <td><%= car.name %></td>
+    <td><%= car.object_subdivisiod %></td>
+    <td><%= car.date_of_commissioning %></td>
+    <td><%= car.date_warranty %></td>
+    <td><%= car.name_org_warranty %></td>
+    <td><%= link_to 'Show', car %></td>
+    <td><%= link_to 'Edit', edit_car_path(car) %></td>
+    <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Car', new_car_path %>
