@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Car:</b>
+  <%= @detail.car %>
+</p>
+
+<p>
+  <b>Warranty:</b>
+  <%= @detail.warranty %>
+</p>
+
+<p>
+  <b>Time de job:</b>
+  <%= @detail.time_de_job %>
+</p>
+
+<p>
+  <b>Time de all:</b>
+  <%= @detail.time_de_all %>
+</p>
+
+<p>
+  <b>Time de warranty:</b>
+  <%= @detail.time_de_warranty %>
+</p>
+
+<p>
+  <b>Km de job:</b>
+  <%= @detail.km_de_job %>
+</p>
+
+<p>
+  <b>Km de all:</b>
+  <%= @detail.km_de_all %>
+</p>
+
+<p>
+  <b>Km de warranty:</b>
+  <%= @detail.km_de_warranty %>
+</p>
+
+
+<%= link_to 'Edit', edit_detail_path(@detail) %> |
+<%= link_to 'Back', details_path %>

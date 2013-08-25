@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  repair: false
+  to: false
+  km_n: 1
+  m_ch: 1
+
+two:
+  repair: false
+  to: false
+  km_n: 1
+  m_ch: 1

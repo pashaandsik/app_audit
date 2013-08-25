@@ -28,8 +28,8 @@
     <%= f.date_select :date_warranty %>
   </div>
   <div class="field">
-    <%= f.label :name_org_warranty %><br />
-    <%= f.text_field :name_org_warranty %>
+    <%= f.label :warranty %><br />
+    <%= f.collection_select(:warranty, :warranty, @car, :name)%>
   </div>
   <div class="actions">
     <%= f.submit %>

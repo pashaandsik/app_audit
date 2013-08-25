@@ -1,4 +1,19 @@
 AppAudit::Application.routes.draw do
+  resources :details
+
+
+  resources :warranties
+
+
+  resources :jobs
+
+
+  resources :mileage_alls
+
+
+  resources :repairs
+
+
   resources :cars
 
 

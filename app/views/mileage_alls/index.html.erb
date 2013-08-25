@@ -1,0 +1,27 @@
+<h1>Listing mileage_alls</h1>
+
+<table>
+  <tr>
+    <th>Km all</th>
+    <th>M ch all</th>
+    <th>Car</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mileage_alls.each do |mileage_all| %>
+  <tr>
+    <td><%= mileage_all.km_all %></td>
+    <td><%= mileage_all.m_ch_all %></td>
+    <td><%= mileage_all.car %></td>
+    <td><%= link_to 'Show', mileage_all %></td>
+    <td><%= link_to 'Edit', edit_mileage_all_path(mileage_all) %></td>
+    <td><%= link_to 'Destroy', mileage_all, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mileage all', new_mileage_all_path %>

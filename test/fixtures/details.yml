@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  car: 
+  warranty: 
+  time_de_job: 1
+  time_de_all: 1
+  time_de_warranty: 1
+  km_de_job: 1
+  km_de_all: 1
+  km_de_warranty: 1
+
+two:
+  car: 
+  warranty: 
+  time_de_job: 1
+  time_de_all: 1
+  time_de_warranty: 1
+  km_de_job: 1
+  km_de_all: 1
+  km_de_warranty: 1

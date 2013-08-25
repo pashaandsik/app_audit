@@ -1,0 +1,49 @@
+<%= form_for(@detail) do |f| %>
+  <% if @detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@detail.errors.count, "error") %> prohibited this detail from being saved:</h2>
+
+      <ul>
+      <% @detail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :car %><br />
+    <%= f.text_field :car %>
+  </div>
+  <div class="field">
+    <%= f.label :warranty %><br />
+    <%= f.text_field :warranty %>
+  </div>
+  <div class="field">
+    <%= f.label :time_de_job %><br />
+    <%= f.number_field :time_de_job %>
+  </div>
+  <div class="field">
+    <%= f.label :time_de_all %><br />
+    <%= f.number_field :time_de_all %>
+  </div>
+  <div class="field">
+    <%= f.label :time_de_warranty %><br />
+    <%= f.number_field :time_de_warranty %>
+  </div>
+  <div class="field">
+    <%= f.label :km_de_job %><br />
+    <%= f.number_field :km_de_job %>
+  </div>
+  <div class="field">
+    <%= f.label :km_de_all %><br />
+    <%= f.number_field :km_de_all %>
+  </div>
+  <div class="field">
+    <%= f.label :km_de_warranty %><br />
+    <%= f.number_field :km_de_warranty %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

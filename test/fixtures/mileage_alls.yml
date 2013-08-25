@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  km_all: 1
+  m_ch_all: 1
+  car: 
+
+two:
+  km_all: 1
+  m_ch_all: 1
+  car: 

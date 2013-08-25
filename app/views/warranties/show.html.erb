@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @warranty.name %>
+</p>
+
+<p>
+  <b>Adds:</b>
+  <%= @warranty.adds %>
+</p>
+
+
+<%= link_to 'Edit', edit_warranty_path(@warranty) %> |
+<%= link_to 'Back', warranties_path %>

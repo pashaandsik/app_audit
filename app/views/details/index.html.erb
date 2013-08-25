@@ -1,0 +1,37 @@
+<h1>Listing details</h1>
+
+<table>
+  <tr>
+    <th>Car</th>
+    <th>Warranty</th>
+    <th>Time de job</th>
+    <th>Time de all</th>
+    <th>Time de warranty</th>
+    <th>Km de job</th>
+    <th>Km de all</th>
+    <th>Km de warranty</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @details.each do |detail| %>
+  <tr>
+    <td><%= detail.car %></td>
+    <td><%= detail.warranty %></td>
+    <td><%= detail.time_de_job %></td>
+    <td><%= detail.time_de_all %></td>
+    <td><%= detail.time_de_warranty %></td>
+    <td><%= detail.km_de_job %></td>
+    <td><%= detail.km_de_all %></td>
+    <td><%= detail.km_de_warranty %></td>
+    <td><%= link_to 'Show', detail %></td>
+    <td><%= link_to 'Edit', edit_detail_path(detail) %></td>
+    <td><%= link_to 'Destroy', detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Detail', new_detail_path %>

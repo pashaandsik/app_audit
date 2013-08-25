@@ -1,0 +1,2 @@
+module MileageAllsHelper
+end
