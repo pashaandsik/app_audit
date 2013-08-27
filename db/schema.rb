@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130825163028) do
+ActiveRecord::Schema.define(:version => 20130827125029) do
 
   create_table "cars", :force => true do |t|
     t.string   "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130825163028) do
     t.integer  "km_de_warranty"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.string   "ancestry"
   end
 
   add_index "details", ["car_id"], :name => "index_details_on_car_id"

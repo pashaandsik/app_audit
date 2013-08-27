@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :warranty %><br />
-    <%= f.collection_select(:warranty, :warranty, @car, :name)%>
+    <%= f.collection_select(:warranty_id, Warranty.order(:name), :id, :name)%>
   </div>
   <div class="actions">
     <%= f.submit %>

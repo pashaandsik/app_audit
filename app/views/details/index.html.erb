@@ -4,6 +4,7 @@
   <tr>
     <th>Car</th>
     <th>Warranty</th>
+    <th>Наиминование</th>
     <th>Time de job</th>
     <th>Time de all</th>
     <th>Time de warranty</th>
@@ -17,8 +18,9 @@
 
 <% @details.each do |detail| %>
   <tr>
-    <td><%= detail.car %></td>
-    <td><%= detail.warranty %></td>
+    <td><%= detail.car.name %></td>
+    <td><%= detail.warranty.name %></td>
+    <td><%= detail.name_det %></td>
     <td><%= detail.time_de_job %></td>
     <td><%= detail.time_de_all %></td>
     <td><%= detail.time_de_warranty %></td>
