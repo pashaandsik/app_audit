@@ -32,8 +32,9 @@ GEM
       activerecord (>= 3.0.0)
     arel (3.0.2)
     bcrypt-ruby (3.1.1-x86-mingw32)
-    bootstrap-rails (0.0.7)
-      railties (~> 3.1)
+    bootstrap (0.0.1)
+    bootstrap-sass (2.3.2.2)
+      sass (~> 3.2)
     builder (3.0.4)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -64,6 +65,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.24)
     multi_json (1.7.9)
+    nifty-generators (0.4.6)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     pony (1.5)
@@ -98,6 +100,9 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    simple_form (2.0.4)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -121,13 +126,16 @@ PLATFORMS
 
 DEPENDENCIES
   ancestry
-  bootstrap-rails
+  bootstrap
+  bootstrap-sass
   coffee-rails (~> 3.2.1)
   devise
   haml
   jquery-rails
+  nifty-generators
   pony
   rails (= 3.2.14)
   sass-rails (~> 3.2.3)
+  simple_form
   sqlite3
   uglifier (>= 1.0.3)

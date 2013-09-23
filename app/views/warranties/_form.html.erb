@@ -7,8 +7,10 @@
       <% @warranty.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
+
       </ul>
     </div>
+        <%= f.hidden_field :parent_id %>
   <% end %>
 
   <div class="field">

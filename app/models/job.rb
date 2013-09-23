@@ -1,3 +1,4 @@
 class Job < ActiveRecord::Base
-  attr_accessible :km_n, :m_ch, :repair, :to
+  belongs_to :car
+  attr_accessible :km_n, :m_ch, :repair, :to , :car_id
 end

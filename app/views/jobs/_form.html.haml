@@ -1,0 +1,12 @@
+= simple_form_for(@job) do |f|
+  = f.error_notification
+
+  .form-inputs
+
+    = f.input :car_id, collection: Car.order(:name) , label: 'машина'
+    = f.input :km_n
+    = f.input :m_ch, collection: 1..24
+
+
+  .form-actions
+    = f.submit class: ["btn btn-primary"]

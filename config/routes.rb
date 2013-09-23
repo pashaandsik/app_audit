@@ -1,4 +1,10 @@
 AppAudit::Application.routes.draw do
+  resources :massages
+
+
+  resources :msgs
+
+
   resources :details
 
 

@@ -1,0 +1,10 @@
+= simple_form_for(@details) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input
+    = f.input :parent_id, collection: Detail.order(:ancestry).map, include_blank: true
+
+  .form-actions
+    = f.submit class: ["btn btn-primary"]

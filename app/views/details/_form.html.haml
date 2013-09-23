@@ -1,0 +1,19 @@
+= simple_form_for(@detail) do |f|
+    = f.error_notification
+
+    .form-inputs
+        = f.input :name_det , label: 'наименование'
+        = f.input :car_id, collection: Car.order(:name) , label: 'машина'
+        = f.input :warranty_id, collection: Warranty.order(:name), label: 'страховка'
+        = f.label "подкласс"
+        = f.collection_select(:parent_id, Detail.order(:name_det), :id, :name_det)
+        = f.input :time_de_job, collection: 1..24
+        = f.input :time_de_all
+        = f.input :time_de_warranty
+        = f.input :km_de_job
+        = f.input :km_de_all
+        = f.input :km_de_warranty
+
+
+    .form-actions
+    = f.submit class: ["btn btn-primary"]

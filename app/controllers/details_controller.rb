@@ -24,12 +24,7 @@ class DetailsController < ApplicationController
   # GET /details/new
   # GET /details/new.json
   def new
-    @detail = Detail.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @detail }
-    end
+    @detail = Detail.new(:parent_id => params[:parent_id])
   end
 
   # GET /details/1/edit
