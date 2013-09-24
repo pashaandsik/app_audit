@@ -1,0 +1,27 @@
+<h1>Listing details</h1>
+
+<table>
+  <tr>
+    <th>Car</th>
+    <th>Warranty</th>
+    <th>Наиминование</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @details.each do |detail| %>
+      <%detail.jobs.each do |tim| %>
+      <tr>
+        <td><%= tim.km_n%></td>
+        <td><%= tim.id%></td>
+        <td><%= detail.jobs  %></td>
+
+      <% end %>
+      </tr>
+  <% end %>
+</table>
+
+<br />
+
+

@@ -2,7 +2,8 @@
   = f.error_notification
 
   .form-inputs
-
+    = f.input :repair, label: 'На ремонте'
+    = f.input :to, label: 'На ТО'
     = f.input :car_id, collection: Car.order(:name) , label: 'машина'
     = f.input :km_n
     = f.input :m_ch, collection: 1..24

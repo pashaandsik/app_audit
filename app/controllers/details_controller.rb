@@ -9,6 +9,18 @@ class DetailsController < ApplicationController
       format.json { render json: @details }
     end
   end
+  def upgrade
+    @details =Detail.all
+
+
+    respond_to do |format|
+      format.html # upgrade.html.erb
+
+    end
+
+
+  end
+
 
   # GET /details/1
   # GET /details/1.json

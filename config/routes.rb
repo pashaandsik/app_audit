@@ -5,7 +5,9 @@ AppAudit::Application.routes.draw do
   resources :msgs
 
 
-  resources :details
+  resources :details do
+           get 'upgrade', :on => :collection
+         end
 
 
   resources :warranties
