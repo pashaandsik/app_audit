@@ -11,7 +11,7 @@ class DetailsController < ApplicationController
   end
   def upgrade
     @details =Detail.all
-
+    @tile = Car.all
 
     respond_to do |format|
       format.html # upgrade.html.erb

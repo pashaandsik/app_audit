@@ -24,6 +24,8 @@ AppAudit::Application.routes.draw do
 
   resources :cars
 
+  match '/car', :to => 'cars#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

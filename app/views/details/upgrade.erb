@@ -15,13 +15,19 @@
       <tr>
         <td><%= tim.km_n%></td>
         <td><%= tim.id%></td>
-        <td><%= detail.jobs  %></td>
+        <td><%= detail.jobs.last.id   %></td>
 
       <% end %>
       </tr>
   <% end %>
 </table>
-
+           <% @tile.each do |tile|%>
+    <%= tile.name %>
+    <% end %>
 <br />
+<div class="form-actions">
+  <button type="submit" class="btn btn-primary">Сохранить</button>
+  <button type="button" class="btn">Отменить</button>
+</div>
 
 
