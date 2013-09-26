@@ -1,3 +1,3 @@
-json.array!(@states) do |state|
-  json.extract! state, :name, :id
+json.array!(@details) do |state|
+  json.extract! state, :name_det, :id
 end
