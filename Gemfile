@@ -20,6 +20,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+gem 'rails_admin_nestable'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'ancestry'
@@ -30,6 +31,15 @@ gem 'pony'
 gem 'bootstrap'
 #gem ''
 #gem ''
+#gem 'turbolinks'
+#gem 'rails-i18n'
+#gem 'devise'
+#gem 'devise-i18n'
+#gem 'rails_admin'
+#gem 'rails_admin-i18n'
+#gem 'ancestry'
+#gem 'rails_admin_nestable'
+#gem 'ffaker'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
