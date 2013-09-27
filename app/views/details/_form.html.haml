@@ -4,14 +4,9 @@
     .form-inputs
         = f.input :name_det , label: 'наименование'
         = f.input :car_id, collection: Car.order(:name) , label: 'машина'
-        = f.label :car_id
-        = f.collection_select :car_id, Car.all, :id, :name,
-              {include_blank: true},
-              { data:{dynamic_selectable_url: dynamic_select_states_path(':car_id'), dynamic_selectable_target: '#detail_parent_id'}}
-
         = f.input :warranty_id, collection: Warranty.order(:name), label: 'страховка'
         = f.label "подкласс"
-        = f.collection_select :parent_id, @detail.country.try(:details) || [], :id, :name_det, :include_blank => true
+        = f.collection_select(:parent_id, Detail.order(:name_det), :id, :name_det, prompt: true)
         = f.input :time_de_job, collection: 1..24
         = f.input :time_de_all
         = f.input :time_de_warranty

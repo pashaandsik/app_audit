@@ -26,9 +26,7 @@ AppAudit::Application.routes.draw do
 
   match '/car', :to => 'cars#index'
 
-  namespace :dynamic_select do
-    get ':country_id/details', to: 'details#index', as: 'details'
-  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
