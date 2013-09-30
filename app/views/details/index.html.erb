@@ -11,7 +11,7 @@
     <th>Km de job</th>
     <th>Km de all</th>
     <th>Km de warranty</th>
-    <th>хз что то должно быть</th>
+    <th>ид работы</th>
     <th></th>
     <th></th>
     <th></th>
@@ -28,11 +28,11 @@
     <td><%= detail.km_de_job %></td>
     <td><%= detail.km_de_all %></td>
     <td><%= detail.km_de_warranty %></td>
-    <td><%= detail.ancestry %></td>
+    <td><%= detail.job_id %></td>
     <td><%= link_to 'Show', detail %></td>
     <td><%= link_to 'Edit', edit_detail_path(detail) %></td>
     <td><%= link_to 'Destroy', detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <td><%= link_to '1212', new_detail_path(:prent_id => detail)%> </td>
+
   </tr>
 <% end %>
 </table>

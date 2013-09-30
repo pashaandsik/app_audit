@@ -10,9 +10,12 @@ class DetailsController < ApplicationController
     end
   end
   def upgrade
-    @details =Detail.all
+    @details = Detail.all
     @tile = Car.all
-
+    #Detail.all.each do |detail|
+    #  @dem= detail.id
+    #  @dem=update_attributes( :job_id => detail.jobs.last.id)
+    #end
 
     respond_to do |format|
       format.html # upgrade.html.erb
