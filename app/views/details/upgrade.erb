@@ -11,19 +11,19 @@
   </tr>
 
   <% @details.each do |detail| %>
-      <%detail.jobs.each do |tim| %>
-      <tr>
-        <td><%= tim.km_n%></td>
-        <td><%= tim.id%></td>
-        <td><%= detail.jobs.last.id   %></td>
 
-      <% end %>
+
+
+
+      <tr>
+        <td><%= detail.name_det %></td>
+        <td><%= detail.jobs.last.id %></td>
+
+
       </tr>
   <% end %>
 </table>
-           <% @tile.each do |tile|%>
-    <%= tile.name %>
-    <% end %>
+
 <br />
 <div class="form-actions">
   <button type="submit" class="btn btn-primary">Сохранить</button>
