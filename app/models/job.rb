@@ -4,8 +4,7 @@ class Job < ActiveRecord::Base
   attr_accessible :km_n, :m_ch, :repair, :to , :car_id
   after_save :update_details_id
   def update_details_id
-    @inire=car_id
-    p "-------------------------"
-    p Detail.joins(:car, :jobs)
+    inire=car_id
+    Car.joins("LEFT JOIN jobs ON cars.id = jobs.car_id").joins("LEFT JOIN details ON cars.id = details.car_id").where('details.car_id' =>inire)
   end
 end
