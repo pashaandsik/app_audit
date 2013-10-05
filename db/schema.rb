@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130930141108) do
+ActiveRecord::Schema.define(:version => 20131004200855) do
 
   create_table "cars", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20130930141108) do
     t.integer  "warranty_id"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
+    t.integer  "ch_all"
+    t.integer  "km_all"
   end
 
   add_index "cars", ["warranty_id"], :name => "index_cars_on_warranty_id"
