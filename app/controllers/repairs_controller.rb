@@ -15,6 +15,7 @@ class RepairsController < ApplicationController
   def show
     @repair = Repair.find(params[:id])
 
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @repair }
@@ -24,7 +25,12 @@ class RepairsController < ApplicationController
   # GET /repairs/new
   # GET /repairs/new.json
   def new
-    @repair = Repair.new
+    p params[:car_id]
+    p params[:car_id]
+    p params[:car_id]
+    p "____________________________"
+    p params[:car_id]
+    @repair = Repair.new(:car_id=>params[:car_id],:detail_id=>params[:detail_id])
 
     respond_to do |format|
       format.html # new.html.erb

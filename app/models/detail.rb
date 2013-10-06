@@ -1,6 +1,7 @@
 class Detail < ActiveRecord::Base
   has_ancestry
   belongs_to :car
+  has_many :repairs
   belongs_to :warranty
   has_many :jobs, through: :car
 

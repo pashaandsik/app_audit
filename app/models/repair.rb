@@ -1,7 +1,6 @@
 class Repair < ActiveRecord::Base
   belongs_to :car
-  attr_accessible :cause, :car_id
-
-
+  belongs_to :detail
+  attr_accessible :cause, :car_id, :detail_id, :replacement
 
 end
