@@ -1,0 +1,27 @@
+%h1 Listing maintenances
+
+%table
+  %tr
+    %th Car
+    %th Amount
+    %th Season sumer
+    %th Season winter
+    %th Time to
+    %th
+    %th
+    %th
+
+  - @maintenances.each do |maintenance|
+    %tr
+      %td= maintenance.car
+      %td= maintenance.amount
+      %td= maintenance.season_sumer
+      %td= maintenance.season_winter
+      %td= maintenance.time_to
+      %td= link_to 'Show', maintenance
+      %td= link_to 'Edit', edit_maintenance_path(maintenance)
+      %td= link_to 'Destroy', maintenance, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Maintenance', new_maintenance_path

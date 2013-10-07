@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Car:
+  = @maintenance.car
+%p
+  %b Amount:
+  = @maintenance.amount
+%p
+  %b Season sumer:
+  = @maintenance.season_sumer
+%p
+  %b Season winter:
+  = @maintenance.season_winter
+%p
+  %b Time to:
+  = @maintenance.time_to
+
+= link_to 'Edit', edit_maintenance_path(@maintenance)
+
+= link_to 'Back', maintenances_path

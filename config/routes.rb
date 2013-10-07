@@ -1,8 +1,8 @@
 AppAudit::Application.routes.draw do
-  resources :massages
+  resources :maintenances
 
 
-  resources :msgs
+
 
 
   resources :details do
@@ -16,7 +16,7 @@ AppAudit::Application.routes.draw do
   resources :jobs
 
 
-  resources :mileage_alls
+
 
 
   resources :repairs
