@@ -4,6 +4,8 @@
   <tr>
     <th>Cause</th>
     <th>Car</th>
+    <th>ид машинки</th>
+    <th>ид детальки</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,7 +14,10 @@
 <% @repairs.each do |repair| %>
   <tr>
     <td><%= repair.cause %></td>
-    <td><%= repair.car %></td>
+    <td><%= repair.replacement %>    </td>
+
+    <td><%= repair.car_id %></td>
+    <td><%= repair.detail_id %></td>
     <td><%= link_to 'Show', repair %></td>
     <td><%= link_to 'Edit', edit_repair_path(repair) %></td>
     <td><%= link_to 'Destroy', repair, method: :delete, data: { confirm: 'Are you sure?' } %></td>

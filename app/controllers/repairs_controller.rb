@@ -25,17 +25,7 @@ class RepairsController < ApplicationController
   # GET /repairs/new
   # GET /repairs/new.json
   def new
-    p params[:car_id]
-    p params[:car_id]
-    p params[:car_id]
-    p "____________________________"
-    p params[:car_id]
     @repair = Repair.new(:car_id=>params[:car_id],:detail_id=>params[:detail_id])
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @repair }
-    end
   end
 
   # GET /repairs/1/edit
