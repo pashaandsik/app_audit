@@ -1,6 +1,6 @@
-class CreateMaintenances < ActiveRecord::Migration
+class CreateServices < ActiveRecord::Migration
   def change
-    create_table :maintenances do |t|
+    create_table :services do |t|
       t.references :car
       t.integer :amount
       t.date :season_sumer
@@ -9,6 +9,6 @@ class CreateMaintenances < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :maintenances, :car_id
+    add_index :services, :car_id
   end
 end

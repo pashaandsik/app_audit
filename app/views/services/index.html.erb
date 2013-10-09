@@ -1,0 +1,31 @@
+<h1>Listing services</h1>
+
+<table>
+  <tr>
+    <th>Car</th>
+    <th>Amount</th>
+    <th>Season sumer</th>
+    <th>Season winter</th>
+    <th>Time to</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @services.each do |service| %>
+  <tr>
+    <td><%= service.car %></td>
+    <td><%= service.amount %></td>
+    <td><%= service.season_sumer %></td>
+    <td><%= service.season_winter %></td>
+    <td><%= service.time_to %></td>
+    <td><%= link_to 'Show', service %></td>
+    <td><%= link_to 'Edit', edit_service_path(service) %></td>
+    <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Service', new_service_path %>

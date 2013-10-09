@@ -1,26 +1,15 @@
 AppAudit::Application.routes.draw do
-  resources :maintenances
-
-
-
-
+  resources :services
 
   resources :details do
            get 'upgrade', :on => :collection
-         end
-
+  end
 
   resources :warranties
 
-
   resources :jobs
 
-
-
-
-
   resources :repairs
-
 
   resources :cars
 

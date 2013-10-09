@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  car: 
+  amount: 1
+  season_sumer: 2013-10-08
+  season_winter: 2013-10-08
+  time_to: 2013-10-08
+
+two:
+  car: 
+  amount: 1
+  season_sumer: 2013-10-08
+  season_winter: 2013-10-08
+  time_to: 2013-10-08
