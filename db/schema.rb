@@ -60,46 +60,6 @@ ActiveRecord::Schema.define(:version => 20131008175904) do
 
   add_index "jobs", ["car_id"], :name => "index_jobs_on_car_id"
 
-  create_table "maintenances", :force => true do |t|
-    t.integer  "car_id"
-    t.integer  "amount"
-    t.date     "season_sumer"
-    t.date     "season_winter"
-    t.date     "time_to"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  add_index "maintenances", ["car_id"], :name => "index_maintenances_on_car_id"
-
-  create_table "massages", :force => true do |t|
-    t.string   "post"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "ancestry"
-  end
-
-  add_index "massages", ["ancestry"], :name => "index_massages_on_ancestry"
-
-  create_table "mileage_alls", :force => true do |t|
-    t.integer  "km_all"
-    t.integer  "m_ch_all"
-    t.integer  "car_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "mileage_alls", ["car_id"], :name => "index_mileage_alls_on_car_id"
-
-  create_table "msgs", :force => true do |t|
-    t.string   "nikolio"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "ancestry"
-  end
-
-  add_index "msgs", ["ancestry"], :name => "index_msgs_on_ancestry"
-
   create_table "repairs", :force => true do |t|
     t.string   "cause"
     t.integer  "car_id"
