@@ -1,0 +1,25 @@
+
+=@job.repair
+
+= @job.to
+
+= @job.km_n
+
+= @job.m_ch
+
+
+= simple_form_for([@job, @job.service]) do |f|
+= f.error_notification
+
+.form-inputs
+
+    = f.input :amount, label: 'Количество сервиса ТО'
+    = f.input :season_sumer, label: 'Сезонное ТО лето'
+    = f.input :season_winter, label: 'Сезонное ТО зима'
+    = f.input :time_to, label: 'Время последнего ТО'
+
+.form-actions
+= f.submit class: ["btn btn-primary"]
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>
