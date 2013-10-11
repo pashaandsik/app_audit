@@ -1,5 +1,5 @@
 AppAudit::Application.routes.draw do
-  resources :services
+
 
   resources :details do
            get 'upgrade', :on => :collection
@@ -8,6 +8,8 @@ AppAudit::Application.routes.draw do
   resources :warranties
 
   resources :jobs
+
+  resources :services
 
   resources :repairs
 

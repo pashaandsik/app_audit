@@ -16,7 +16,7 @@ class WarrantiesController < ApplicationController
     @warranty = Warranty.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # show.html.haml
       format.json { render json: @warranty }
     end
   end
@@ -27,7 +27,7 @@ class WarrantiesController < ApplicationController
     @warranty = Warranty.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # new.html.haml
       format.json { render json: @warranty }
     end
   end

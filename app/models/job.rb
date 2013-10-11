@@ -1,5 +1,6 @@
 class Job < ActiveRecord::Base
   belongs_to :car
+  has_one :service, through: :car
   has_many :details, through: :car
   attr_accessible :km_n, :m_ch, :repair, :to , :car_id
   after_save :update_details_id
@@ -27,6 +28,7 @@ class Job < ActiveRecord::Base
         detail.time_de_job = m_ch
         detail.time_de_all += detail.time_de_job
         detail.km_de_all += detail.km_de_job
+        detail.save
       else
         detail.job_id = id
         if detail.time_de_all.nil?
@@ -45,10 +47,7 @@ class Job < ActiveRecord::Base
 
 
     end
-    if repair
-      p "__________________________________________________________"
-      #render repair_url
-    end
+
 
     #Car.joins("LEFT JOIN jobs ON cars.id = jobs.car_id").joins("LEFT JOIN details ON cars.id = details.car_id").where('details.car_id' =>inire)
   end
