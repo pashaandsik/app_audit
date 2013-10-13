@@ -31,6 +31,8 @@ gem 'haml'
 gem 'devise'
 gem 'pony'
 gem 'bootstrap'
+gem 'russian'
+gem 'ransack' # поисковик
 #gem ''
 #gem ''
 #gem 'turbolinks'
