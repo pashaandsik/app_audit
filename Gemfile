@@ -22,6 +22,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+gem 'quiet_assets', :group => :development
 gem 'rails_admin_nestable'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
@@ -32,6 +33,7 @@ gem 'devise'
 gem 'pony'
 gem 'bootstrap'
 gem 'russian'
+gem 'thin'
 gem 'ransack' # поисковик
 #gem ''
 #gem ''

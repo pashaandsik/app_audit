@@ -1,6 +1,14 @@
 class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
+  def reports_job
+    @jobs = Job.where(:to => 0).sum(:km_n)
+        #Job.select("car.name,date(created_at) as ordered_date, sum(km_n) as kilometr_all, sum(m_ch) as time_all").joins(:car).group("date(created_at) ")
+    #Car.select("cars.name, Sum(jobs.km_n) , Sum(jobs.m_ch)").joins(:jobs).group("date(created_at)
+  end
+  def reports_to
+
+  end
   def index
     @jobs = Job.all
 
@@ -13,7 +21,7 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
-    @job = Job.find(params[:id])
+    @job =Job.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.haml

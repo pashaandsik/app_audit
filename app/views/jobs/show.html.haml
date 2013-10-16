@@ -11,5 +11,5 @@
 
 %p.lead
 
-  = link_to 'Edit', edit_job_path(@job)
-  = link_to 'Back', jobs_path
+  = link_to 'Edit', edit_job_path(@job) unless @job.to or @job.repair
+  = link_to 'Back', jobs_path unless @job.to or @job.repair

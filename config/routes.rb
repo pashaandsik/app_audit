@@ -7,7 +7,10 @@ AppAudit::Application.routes.draw do
 
   resources :warranties
 
-  resources :jobs
+  resources :jobs do
+      get 'reports_job', :on => :collection
+      get 'reports_to', :on => :collection
+  end
 
   resources :services
 
