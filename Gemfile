@@ -35,6 +35,8 @@ gem 'bootstrap'
 gem 'russian'
 gem 'thin'
 gem 'ransack' # поисковик
+gem 'bootstrap-datepicker-rails' #датка
+gem 'jquery-ui-rails'
 #gem ''
 #gem ''
 #gem 'turbolinks'

@@ -8,8 +8,8 @@ AppAudit::Application.routes.draw do
   resources :warranties
 
   resources :jobs do
-      get 'reports_job', :on => :collection
-      get 'reports_to', :on => :collection
+      get 'reportsjob', :on => :collection
+      get 'reportsto', :on => :collection
   end
 
   resources :services

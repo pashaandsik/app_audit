@@ -1,12 +1,12 @@
 class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
-  def reports_job
-    @jobs = Job.where(:to => 0).sum(:km_n)
+  def reportsjob
+    @jobs = Car.select("cars.name as name, Sum(jobs.km_n) as km_all , Sum(jobs.m_ch) as m_ch_all").joins(:jobs).where("date(jobs.created_at)<= ? AND date(jobs.created_at)>=?", "2013-10-30" ,"2013-10-01").group("cars.name")
         #Job.select("car.name,date(created_at) as ordered_date, sum(km_n) as kilometr_all, sum(m_ch) as time_all").joins(:car).group("date(created_at) ")
-    #Car.select("cars.name, Sum(jobs.km_n) , Sum(jobs.m_ch)").joins(:jobs).group("date(created_at)
+        #Car.select("cars.name, Sum(jobs.km_n) , Sum(jobs.m_ch)").joins(:jobs).where("date(jobs.created_at)<= ? AND date(jobs.created_at)>=?", "2013-10-30" ,"2013-10-01").group("cars.name")
   end
-  def reports_to
+  def reportsto
 
   end
   def index
