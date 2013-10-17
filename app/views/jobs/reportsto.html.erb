@@ -1,5 +1,5 @@
 <h1>отчет о работе за периуд</h1>
- <%= form_tag( reportsjob_jobs_path, :method => 'get') do %>
+ <%= form_tag( reportsto_jobs_path, :method => 'get') do %>
     <p>Выбарка</p>
     <p>
      от  <%= text_field_tag 'data_min',value = nil, "data-behaviour"=>'datepicker'  %>
@@ -31,9 +31,9 @@
 
 <% @jobs.each do |job| %>
   <tr>
-    <td><%= job.name %></td>
-    <td><%= job.km_all %></td>
-    <td><%= job.m_ch_all %></td>
+    <td><%= job.car.name%></td>
+    <td><%= job.to %></td>
+    <td><%= job.repair %></td>
 
 
   </tr>

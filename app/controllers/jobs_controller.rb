@@ -13,12 +13,14 @@ class JobsController < ApplicationController
     end
   end
   def reportsto
-    @jobs = Job.where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", params[:data_min], params[:data_max]).where("jobs.to = true or jobs.repair = true").joins(:cars)
-    #if params[:data_min] and params[:data_max]           #Job.where(:to => true 'OR' :repair => true)
-    #
-    #else
-    #
-    #end
+
+
+    if params[:data_min] and params[:data_max]           #Job.where(:to => true 'OR' :repair => true)
+      @jobs = Job.where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", params[:data_min], params[:data_max]).where(to: true )
+      #Job.where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", "2013-10-10", "2013-10-11").where(to: true )
+    else
+      @jobs = Job.where(to: true )
+    end
 
   end
   def index
