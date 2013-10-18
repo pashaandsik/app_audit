@@ -23,17 +23,21 @@
 </script>
 <table>
   <tr>
-    <th>Наиминование</th>
-    <th>Отработанные километры</th>
-    <th>Отработанные часы</th>
+    <th>Наиминование машины </th>
+    <th>Причина поломки</th>
+    <th>Наиминование детали </th>
+    <th>дата поломки</th>
 
   </tr>
 
-<% @jobs.each do |job| %>
+<% @jobs_to.each do |job| %>
   <tr>
-    <td><%= job.car.name%></td>
-    <td><%= job.to %></td>
-    <td><%= job.repair %></td>
+    <td><%= job.name%></td>
+    <td><%= job.causee %></td>
+    <td><%= job.name_detall %></td>
+    <td><%= job.date_repairs %></td>
+
+    <td><%= %></td>
 
 
   </tr>
@@ -41,5 +45,23 @@
 </table>
 
 <br />
+<table>
+  <tr>
+    <th>Наиминование</th>
+    <th>Отработанные километры</th>
+    <th>Отработанные часы</th>
 
-<%= link_to 'New Job', new_job_path %>
+  </tr>
+
+  <% @jobs_rep.each do |job| %>
+      <tr>
+        <td><%= job.car.name%></td>
+        <td><%=   %></td>
+        <td><%= job.repair %></td>
+
+
+      </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Новая работа', new_job_path %>

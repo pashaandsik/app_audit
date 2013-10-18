@@ -1,11 +1,12 @@
 class Job < ActiveRecord::Base
   belongs_to :car
+  has_one :repair
   has_one :service, through: :car
   has_many :details, through: :car
-  attr_accessible :km_n, :m_ch, :repair, :to , :car_id
+  attr_accessible :km_n, :m_ch, :repair_job, :to , :car_id
   after_save :update_details_id
   def update_details_id
-    unless repair or to
+    unless repair_job or to
 
     Car.where('cars.id' => car_id ).each do  |car|
       if car.ch_all.nil?

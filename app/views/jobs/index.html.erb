@@ -2,10 +2,12 @@
 
 <table>
   <tr>
-    <th>Repair</th>
-    <th>To</th>
-    <th>Km n</th>
-    <th>M ch</th>
+    <th>Наиминование машины</th>
+    <th>На ремонте</th>
+    <th>На тех обслуживании</th>
+    <th>Километров выполнено</th>
+    <th>Мото-часов выполнено</th>
+    <th>Дата создания</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,11 +15,12 @@
 
 <% @jobs.each do |job| %>
   <tr>
-    <td><%= job.repair %></td>
-    <td><%= job.to %></td>
+    <td><%= job.car.name %></td>
+    <td><%= job.repair_job ? 'да': 'нет' %> </td>
+    <td><%= job.to ? 'да': 'нет'%></td>
     <td><%= job.km_n %></td>
     <td><%= job.m_ch %></td>
-    <td><%= job.created_at %></td>
+    <td><%= job.created_at.strftime("%Y-%m-%d ") %></td>
     <td><%= link_to 'Подробнее', job %></td>
     <td><%= link_to 'Редактировать', edit_job_path(job) %></td>
     <td><%= link_to 'Удалить', job, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
@@ -27,4 +30,4 @@
 
 <br />
 
-<%= link_to 'New Job', new_job_path %>
+<%= link_to 'Новая работа', new_job_path %>

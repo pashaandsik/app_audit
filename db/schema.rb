@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20131018121105) do
   add_index "details", ["warranty_id"], :name => "index_details_on_warranty_id"
 
   create_table "jobs", :force => true do |t|
-    t.boolean  "repair"
+    t.boolean  "repair_job"
     t.boolean  "to"
     t.integer  "km_n"
     t.integer  "m_ch"

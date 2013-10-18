@@ -1,6 +1,6 @@
 
 %br
-  =link_to 'в ремонт', new_repair_url(car_id: @job.car_id, job_id: @job.id ), :class => 'a_baton'  if @job.repair
+  =link_to 'в ремонт', new_repair_url(car_id: @job.car_id, job_id: @job.id ), :class => 'a_baton'  if @job.repair_job
 
 %br
   =link_to 'в техническое обслуживание', new_service_path, :class => 'a_baton' if @job.to

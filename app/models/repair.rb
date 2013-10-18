@@ -1,6 +1,7 @@
 class Repair < ActiveRecord::Base
   belongs_to :car
   belongs_to :detail
+  belongs_to :job
   attr_accessible :cause, :car_id, :detail_id, :job_id, :replacement
   after_save :update_details_params
 

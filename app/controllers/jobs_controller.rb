@@ -15,60 +15,77 @@ class JobsController < ApplicationController
   def reportsto
 
 
-    if params[:data_min] and params[:data_max]           #Job.where(:to => true 'OR' :repair => true)
-      @jobs = Job.where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", params[:data_min], params[:data_max]).where(to: true )
-      #Job.where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", "2013-10-10", "2013-10-11").where(to: true )
+    if params[:data_min] and params[:data_max]   #Job.where(:to => true 'OR' :repair => true)
+      @jobs_to = Car.select("cars.name,repairs.cause as causee, jobs.repair_job , details.name_det as name_detall, date(repairs.created_at) as date_repairs").where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", params[:data_min], params[:data_max]).where( 'jobs.repair_job' => true ).joins(" INNER JOIN repairs ON repairs.car_id = cars.id INNER JOIN jobs ON repairs.job_id = jobs.id INNER JOIN details ON details.id = repairs.detail_id")
+      @jobs_rep = Job.where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", params[:data_min], params[:data_max]).where(repairs_job: true )
+      #Car.select("cars.name,repairs.cause, jobs.repair, details.name_det, repairs.created_at").where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", params[:data_min], params[:data_max]).where( 'jobs.to' => true ).joins(" INNER JOIN repairs ON repairs.car_id = cars.id INNER JOIN jobs ON repairs.job_id = jobs.id INNER JOIN details ON details.id = repairs.detail_id")
+      #Repair.select("cars.name,repairs.cause, jobs.repair, details.name_det, repairs.created_at").where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", "2013-10-10", "2013-10-11").where(to: true ).joins(:car,  :detail, :jobs )
+      #Job.all.find_by_sql("
+      #SELECT cars.name,
+      #  repairs.cause,
+      #  jobs.repair,
+      #  details.name_det,
+      #  repairs.created_at
+      #FROM cars
+      #INNER JOIN repairs ON repairs.car_id = cars.id
+      #INNER JOIN jobs ON repairs.job_id = jobs.id
+      #INNER JOIN details ON details.id = repairs.detail_id
+      #WHERE jobs.repair = 't'
+      #")
+
+
     else
-      @jobs = Job.where(to: true )
+      @jobs_to = Car.select("cars.name,repairs.cause as causee, repair_job , details.name_det as name_detall, date(repairs.created_at) as date_repairs").where( 'jobs.repair_job' => true ).joins(" INNER JOIN repairs ON repairs.car_id = cars.id INNER JOIN jobs ON repairs.job_id = jobs.id INNER JOIN details ON details.id = repairs.detail_id")
+      @jobs_rep = Job.where(repair_job: true )
     end
 
   end
   def index
     @jobs = Job.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @jobs }
-    end
-  end
+        respond_to do |format|
+          format.html # index.html.erb
+          format.json { render json: @jobs }
+        end
+      end
 
-  # GET /jobs/1
-  # GET /jobs/1.json
-  def show
-    @job =Job.find(params[:id])
+      # GET /jobs/1
+      # GET /jobs/1.json
+      def show
+        @job =Job.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.haml
-      format.json { render json: @job }
-    end
-  end
+        respond_to do |format|
+          format.html # show.html.haml
+          format.json { render json: @job }
+        end
+      end
 
-  # GET /jobs/new
-  # GET /jobs/new.json
-  def new
-    @job = Job.new
+      # GET /jobs/new
+      # GET /jobs/new.json
+      def new
+        @job = Job.new
 
-    respond_to do |format|
-      format.html # new.html.haml
-      format.json { render json: @job }
-    end
-  end
+        respond_to do |format|
+          format.html # new.html.haml
+          format.json { render json: @job }
+        end
+      end
 
-  # GET /jobs/1/edit
-  def edit
-    @job = Job.find(params[:id])
-  end
+      # GET /jobs/1/edit
+      def edit
+        @job = Job.find(params[:id])
+      end
 
-  # POST /jobs
-  # POST /jobs.json
-  def create
-    @job = Job.new(params[:job])
+      # POST /jobs
+      # POST /jobs.json
+      def create
+        @job = Job.new(params[:job])
 
 
-    respond_to do |format|
-      if @job.save
-        format.html { redirect_to @job, notice: 'Job was successfully created.' }
-        format.json { render json: @job, status: :created, location: @job }
+        respond_to do |format|
+          if @job.save
+            format.html { redirect_to @job, notice: 'Job was successfully created.' }
+            format.json { render json: @job, status: :created, location: @job }
 
       else
         format.html { render action: "new" }
