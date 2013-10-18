@@ -13,9 +13,9 @@
   <tr>
     <td><%= warranty.name %></td>
     <td><%= warranty.adds %></td>
-    <td><%= link_to 'Show', warranty %></td>
-    <td><%= link_to 'Edit', edit_warranty_path(warranty) %></td>
-    <td><%= link_to 'Destroy', warranty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Подробнее', warranty %></td>
+    <td><%= link_to 'Редактировать', edit_warranty_path(warranty) %></td>
+    <td><%= link_to 'Удалить', warranty, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
   </tr>
 <% end %>
 </table>

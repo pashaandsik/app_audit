@@ -1,17 +1,19 @@
-<h1>Listing details</h1>
+<h1>Список всех деталей</h1>
 
-<table>
+<table border="1">
   <tr>
-    <th>Car</th>
-    <th>Warranty</th>
-    <th>Наиминование</th>
-    <th>Time de job</th>
-    <th>Time de all</th>
-    <th>Time de warranty</th>
-    <th>Km de job</th>
-    <th>Km de all</th>
-    <th>Km de warranty</th>
-    <th>ид работы</th>
+    <th>наименование машины</th>
+    <th>наименование гарантии</th>
+    <th>Наиминование детали</th>
+
+    <!--<th>время работы</th>-->
+
+    <th>все время работы</th>
+    <th>время гарантии</th>
+    <!--<th>отработано километров</th>-->
+    <th>общее количество километров</th>
+    <th>количество отработанных километров по гарантия</th>
+
     <th></th>
     <th></th>
     <th></th>
@@ -23,16 +25,16 @@
     <td><%= detail.warranty.name %></td>
     <td><%= detail.name_det %></td>
     <td><%= detail.time_de_job %></td >
-    <td><%= detail.time_de_all %></td>
+    <!--<td><%= detail.time_de_all %></td>-->
     <td><%= detail.time_de_warranty %></td>
-    <td><%= detail.km_de_job %></td>
+    <!--<td><%= detail.km_de_job %></td>-->
     <td><%= detail.km_de_all %></td>
     <td><%= detail.km_de_warranty %></td>
-    <td><%= detail.job_id %></td>
-    <td><%= link_to 'Show', detail %></td>
-    <td><%= link_to 'Edit', edit_detail_path(detail) %></td>
-    <td><%= link_to 'Destroy', detail, method: :delete %></td>
-    <td><%= link_to 'в ремонт', new_repair_url(detail_id: detail.id, car_id: detail.car_id  ) %></td>
+
+    <td><%= link_to 'Подробнее', detail %></td>
+    <td><%= link_to 'Редактировать', edit_detail_path(detail) %></td>
+    <td><%= link_to 'Удалить', detail, method: :delete %></td>
+    <!--<td><%= link_to 'в ремонт', new_repair_url(detail_id: detail.id, car_id: detail.car_id  ) %></td>-->
 
 
 
@@ -42,4 +44,4 @@
 
 <br />
 
-<%= link_to 'New Detail', new_detail_path %>
+<%= link_to 'Новая деталь', new_detail_path %>

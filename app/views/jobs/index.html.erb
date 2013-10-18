@@ -1,4 +1,4 @@
-<h1>Listing jobs</h1>
+<h1>список всех выполненных работ</h1>
 
 <table>
   <tr>
@@ -18,9 +18,9 @@
     <td><%= job.km_n %></td>
     <td><%= job.m_ch %></td>
     <td><%= job.created_at %></td>
-    <td><%= link_to 'Show', job %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Подробнее', job %></td>
+    <td><%= link_to 'Редактировать', edit_job_path(job) %></td>
+    <td><%= link_to 'Удалить', job, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
   </tr>
 <% end %>
 </table>

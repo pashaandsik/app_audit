@@ -25,7 +25,7 @@ class RepairsController < ApplicationController
   # GET /repairs/new
   # GET /repairs/new.json
   def new
-    @repair = Repair.new(:car_id=>params[:car_id],:detail_id=>params[:detail_id])
+    @repair = Repair.new(:car_id=>params[:car_id],:job_id=>params[:job_id])
   end
 
   # GET /repairs/1/edit

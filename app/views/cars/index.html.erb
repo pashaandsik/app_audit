@@ -1,12 +1,12 @@
-<h1>Listing cars</h1>
+<h1>Все машины</h1>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Object subdivisiod</th>
-    <th>Date of commissioning</th>
-    <th>Date warranty</th>
-    <th>Warranty</th>
+    <th>наименование</th>
+    <th>объект подразделения</th>
+    <th>дата ввод в эксплуатацию</th>
+    <th>дата гарантированного срока</th>
+    <th>наименование страховой фирмы</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,13 +19,13 @@
     <td><%= car.date_of_commissioning %></td>
     <td><%= car.date_warranty %></td>
     <td><%= car.warranty.name %></td>
-    <td><%= link_to 'Show', car %></td>
-    <td><%= link_to 'Edit', edit_car_path(car) %></td>
-    <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Подробнее', car %></td>
+    <td><%= link_to 'Редактировать', edit_car_path(car) %></td>
+    <td><%= link_to 'Удалить', car, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Car', new_car_path %>
+<%= link_to 'Создать новую машину', new_car_path %>

@@ -7,12 +7,12 @@
         = f.input :warranty_id, collection: Warranty.order(:name), label: 'страховка'
         = f.label "подкласс"
         = f.grouped_collection_select(:parent_id, Car.order(:name), :details ,:name, :id , :name_det, prompt: true)
-        = f.input :time_de_job, collection: 1..24
-        = f.input :time_de_all
-        = f.input :time_de_warranty
-        = f.input :km_de_job
-        = f.input :km_de_all
-        = f.input :km_de_warranty
+        = f.input :time_de_job, collection: 0..24 , label: 'время работы'
+        = f.input :time_de_all, label: 'Все время работы' , input_html: { value: '0' }
+        = f.input :time_de_warranty , label: 'Время гарантии' , input_html: { value: '0' }
+        = f.input :km_de_job, label: 'отработано километров' , input_html: { value: '0' }
+        = f.input :km_de_all, label: 'общее количество километров' , input_html: { value: '0' }
+        = f.input :km_de_warranty, label: 'количество отработанных километров по гарантия' , input_html: { value: '0' }
 
 
     .form-actions
