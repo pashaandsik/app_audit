@@ -1,15 +1,14 @@
 
-%br
-  =link_to 'в ремонт', new_repair_url(car_id: @job.car_id, job_id: @job.id ), :class => 'a_baton'  if @job.repair_job
+-if(@job.repair_job)
+  =link_to 'в ремонт', new_repair_url(car_id: @job.car_id, job_id: @job.id ), :class => 'a_baton'
+-elsif(@job.to)
+  =link_to 'в техническое обслуживание', new_service_path, :class => 'a_baton'
+-else
+  .text
+    Километров пройдено
+    %p=@job.km_n
+    Мото часов
+    %p=@job.m_ch
 
-%br
-  =link_to 'в техническое обслуживание', new_service_path, :class => 'a_baton' if @job.to
-
-= @job.km_n
-
-= @job.m_ch
-
-%p.lead
-
-  = link_to 'Edit', edit_job_path(@job) unless @job.to or @job.repair
-  = link_to 'Back', jobs_path unless @job.to or @job.repair
+= link_to 'Редактировать', edit_job_path(@job) unless @job.to or @job.repair
+= link_to 'назад', jobs_path unless @job.to or @job.repair

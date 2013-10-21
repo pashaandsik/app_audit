@@ -1,11 +1,11 @@
-<h1>Listing repairs</h1>
+<h1>все отремонтированные </h1>
 
 <table>
   <tr>
-    <th>Cause</th>
-    <th>Car</th>
-    <th>ид машинки</th>
-    <th>ид детальки</th>
+    <th>Причина</th>
+    <th>замена произошла</th>
+    <th>машинка</th>
+    <th>деталь</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,10 +14,10 @@
 <% @repairs.each do |repair| %>
   <tr>
     <td><%= repair.cause %></td>
-    <td><%= repair.replacement %>    </td>
+    <td><%= repair.replacement ? "да" : "нет" %>    </td>
 
-    <td><%= repair.car_id %></td>
-    <td><%= repair.detail_id %></td>
+    <td><%= repair.car.name %></td>
+    <td><%= repair.detail.name_det %></td>
     <td><%= link_to 'Подробнее', repair %></td>
     <td><%= link_to 'Редактировать', edit_repair_path(repair) %></td>
     <td><%= link_to 'Удалить', repair, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
@@ -27,4 +27,4 @@
 
 <br />
 
-<%= link_to 'New Repair', new_repair_path %>
+<%= link_to 'новый ремонт', new_repair_path %>

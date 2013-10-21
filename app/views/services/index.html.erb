@@ -1,12 +1,12 @@
-<h1>Listing services</h1>
+
 
 <table>
   <tr>
-    <th>Car</th>
-    <th>Amount</th>
-    <th>Season sumer</th>
-    <th>Season winter</th>
-    <th>Time to</th>
+    <th>машины</th>
+    <th>Количество сервиса ТО</th>
+    <th>Сезонное ТО лето</th>
+    <th>Сезонное ТО зима</th>
+    <th>Время последнего ТО</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +14,7 @@
 
 <% @services.each do |service| %>
   <tr>
-    <td><%= service.car %></td>
+    <td><%= service.car.name %></td>
     <td><%= service.amount %></td>
     <td><%= service.season_sumer %></td>
     <td><%= service.season_winter %></td>
@@ -28,4 +28,4 @@
 
 <br />
 
-<%= link_to 'New Service', new_service_path %>
+<%= link_to 'новое ТО', new_service_path %>
