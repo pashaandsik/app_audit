@@ -1,8 +1,9 @@
-
+-a= Service.where(car_id: @job.car_id)
 -if(@job.repair_job)
   =link_to 'в ремонт', new_repair_url(car_id: @job.car_id, job_id: @job.id ), :class => 'a_baton'
 -elsif(@job.to)
-  =link_to 'в техническое обслуживание', new_service_path, :class => 'a_baton'
+  - a.each do |er|
+    =link_to 'в техническое обслуживание', edit_service_path(er.id), :class => 'a_baton'
 -else
   .text
     Километров пройдено

@@ -3,36 +3,17 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def reportsjob
     if params[:data_min] and params[:data_max]
-      #@jobs = Job.select("*").where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", params[:data_min], params[:data_max]).(select("cars.name as name, Sum(jobs.km_n) as km_all , Sum(jobs.m_ch) as m_ch_all").joins(:jobs).group("cars.name"))
       @jobs = Car.select("cars.name as name, Sum(jobs.km_n) as km_all , Sum(jobs.m_ch) as m_ch_all").joins(:jobs).where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", params[:data_min], params[:data_max]).group("cars.name")
     else
       @jobs = Car.select("cars.name as name, Sum(jobs.km_n) as km_all , Sum(jobs.m_ch) as m_ch_all").joins(:jobs).group("cars.name")
-        #Job.select("car.name,date(created_at) as ordered_date, sum(km_n) as kilometr_all, sum(m_ch) as time_all").joins(:car).group("date(created_at) ")
-      #@jobq = Job.where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", params[:data_min], params[:data_max]).(Car.select("cars.name as name, Sum(jobs.km_n) as km_all , Sum(jobs.m_ch) as m_ch_all").joins(:jobs).group("cars.name"))
-        #Car.select("cars.name, Sum(jobs.km_n) , Sum(jobs.m_ch)").joins(:jobs).where("date(jobs.created_at)<= ? AND date(jobs.created_at)>=?", "2013-10-30" ,"2013-10-01").group("cars.name")
-    end
+     end
   end
   def reportsto
 
 
-    if params[:data_min] and params[:data_max]   #Job.where(:to => true 'OR' :repair => true)
+    if params[:data_min] and params[:data_max]
       @jobs_to = Car.select("cars.name,repairs.cause as causee, jobs.repair_job , details.name_det as name_detall, date(repairs.created_at) as date_repairs").where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", params[:data_min], params[:data_max]).where( 'jobs.repair_job' => true ).joins(" INNER JOIN repairs ON repairs.car_id = cars.id INNER JOIN jobs ON repairs.job_id = jobs.id INNER JOIN details ON details.id = repairs.detail_id")
       @jobs_rep = Job.where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", params[:data_min], params[:data_max]).where(to: true )
-      #Car.select("cars.name,repairs.cause, jobs.repair, details.name_det, repairs.created_at").where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", params[:data_min], params[:data_max]).where( 'jobs.to' => true ).joins(" INNER JOIN repairs ON repairs.car_id = cars.id INNER JOIN jobs ON repairs.job_id = jobs.id INNER JOIN details ON details.id = repairs.detail_id")
-      #Repair.select("cars.name,repairs.cause, jobs.repair, details.name_det, repairs.created_at").where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", "2013-10-10", "2013-10-11").where(to: true ).joins(:car,  :detail, :jobs )
-      #Job.all.find_by_sql("
-      #SELECT cars.name,
-      #  repairs.cause,
-      #  jobs.repair,
-      #  details.name_det,
-      #  repairs.created_at
-      #FROM cars
-      #INNER JOIN repairs ON repairs.car_id = cars.id
-      #INNER JOIN jobs ON repairs.job_id = jobs.id
-      #INNER JOIN details ON details.id = repairs.detail_id
-      #WHERE jobs.repair = 't'
-      #")
-
 
     else
       @jobs_to = Car.select("cars.name,repairs.cause as causee, repair_job , details.name_det as name_detall, date(repairs.created_at) as date_repairs").where( 'jobs.repair_job' => true ).joins(" INNER JOIN repairs ON repairs.car_id = cars.id INNER JOIN jobs ON repairs.job_id = jobs.id INNER JOIN details ON details.id = repairs.detail_id")
@@ -53,6 +34,7 @@ class JobsController < ApplicationController
       # GET /jobs/1.json
       def show
         @job =Job.find(params[:id])
+
 
         respond_to do |format|
           format.html # show.html.haml

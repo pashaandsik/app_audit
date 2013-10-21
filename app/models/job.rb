@@ -3,9 +3,23 @@ class Job < ActiveRecord::Base
   has_one :repair
   has_one :service, through: :car
   has_many :details, through: :car
-  attr_accessible :km_n, :m_ch, :repair_job, :to , :car_id
+  attr_accessible :km_n, :m_ch, :repair_job, :to , :car_id  , :season_bool
   after_save :update_details_id
   def update_details_id
+    if to
+      if Service.where(car_id: car_id).empty?
+        a= Service.new
+        a.update_attributes( car_id: car_id, amount: 1, time_to: Time.new.strftime("%F"), season_sumer: Time.new(2013,04,19).strftime("%F") ,season_winter: Time.new(2013,10,19).strftime("%F")  )
+        a.save
+      else
+
+      end
+
+
+    elsif season_bool
+
+    end
+
     unless repair_job or to
 
     Car.where('cars.id' => car_id ).each do  |car|

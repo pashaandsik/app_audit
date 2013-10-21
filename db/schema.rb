@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131018121105) do
+ActiveRecord::Schema.define(:version => 20131021174143) do
 
   create_table "cars", :force => true do |t|
     t.string   "name"
@@ -53,9 +53,10 @@ ActiveRecord::Schema.define(:version => 20131018121105) do
     t.boolean  "to"
     t.integer  "km_n"
     t.integer  "m_ch"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "car_id"
+    t.boolean  "season_bool"
   end
 
   add_index "jobs", ["car_id"], :name => "index_jobs_on_car_id"
