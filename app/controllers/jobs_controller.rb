@@ -17,7 +17,7 @@ class JobsController < ApplicationController
 
     if params[:data_min] and params[:data_max]   #Job.where(:to => true 'OR' :repair => true)
       @jobs_to = Car.select("cars.name,repairs.cause as causee, jobs.repair_job , details.name_det as name_detall, date(repairs.created_at) as date_repairs").where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", params[:data_min], params[:data_max]).where( 'jobs.repair_job' => true ).joins(" INNER JOIN repairs ON repairs.car_id = cars.id INNER JOIN jobs ON repairs.job_id = jobs.id INNER JOIN details ON details.id = repairs.detail_id")
-      @jobs_rep = Job.where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", params[:data_min], params[:data_max]).where(repairs_job: true )
+      @jobs_rep = Job.where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", params[:data_min], params[:data_max]).where(to: true )
       #Car.select("cars.name,repairs.cause, jobs.repair, details.name_det, repairs.created_at").where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", params[:data_min], params[:data_max]).where( 'jobs.to' => true ).joins(" INNER JOIN repairs ON repairs.car_id = cars.id INNER JOIN jobs ON repairs.job_id = jobs.id INNER JOIN details ON details.id = repairs.detail_id")
       #Repair.select("cars.name,repairs.cause, jobs.repair, details.name_det, repairs.created_at").where("date(jobs.created_at)>= ? AND date(jobs.created_at)<=?", "2013-10-10", "2013-10-11").where(to: true ).joins(:car,  :detail, :jobs )
       #Job.all.find_by_sql("
@@ -36,7 +36,7 @@ class JobsController < ApplicationController
 
     else
       @jobs_to = Car.select("cars.name,repairs.cause as causee, repair_job , details.name_det as name_detall, date(repairs.created_at) as date_repairs").where( 'jobs.repair_job' => true ).joins(" INNER JOIN repairs ON repairs.car_id = cars.id INNER JOIN jobs ON repairs.job_id = jobs.id INNER JOIN details ON details.id = repairs.detail_id")
-      @jobs_rep = Job.where(repair_job: true )
+      @jobs_rep = Job.where(to: true )
     end
 
   end

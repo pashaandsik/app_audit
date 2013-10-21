@@ -17,7 +17,7 @@
         <li class="<%='active' if current_page?(:controller => "details") %>"><%= link_to "детали", details_path() %></li>
         <li class="<%='active' if current_page?(:controller => "jobs") %>"><%= link_to "отработка", jobs_path() %></li>
         <li class="<%='active' if current_page?(:controller => "repairs") %>"><%= link_to "ремонт", repairs_path() %></li>
-        <li class="<%='active' if current_page?(:controller => "services") %>"><%= link_to "то", services_path() %></li>
+        <li class="<%='active' if current_page?(:controller => "services") %>"><%= link_to "техническое обслуживание", services_path() %></li>
         <li class="<%='active' if current_page?(:controller => "jobs", action: "reportsto") %>"><%= link_to "отчет to", reportsto_jobs_path() %></li>
         <li class="<%='active' if current_page?(:controller => "jobs", action: "reportsjob") %>"><%= link_to "отчет job", reportsjob_jobs_path() %></li>
 
