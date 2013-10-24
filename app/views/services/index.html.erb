@@ -1,14 +1,12 @@
 
 
-<table>
+<table class="table table-bordered">
   <tr>
-    <th>машины</th>
+    <th>Машины</th>
     <th>Количество сервиса ТО</th>
     <th>Сезонное ТО лето</th>
     <th>Сезонное ТО зима</th>
     <th>Время последнего ТО</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
@@ -19,13 +17,13 @@
     <td><%= service.season_sumer %></td>
     <td><%= service.season_winter %></td>
     <td><%= service.time_to %></td>
-    <td><%= link_to 'Подробнее', service %></td>
-    <td><%= link_to 'Редактировать', edit_service_path(service) %></td>
-    <td><%= link_to 'Удалить', service, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+    <td><nobr><%= link_to 'Подробнее', service, :class => "btn btn-success btn-mini" %>
+    <%= link_to 'Редактировать', edit_service_path(service), :class => "btn btn-info btn-mini" %>
+    <%= link_to 'Удалить', service, method: :delete, data: { confirm: 'Вы уверены?' }, :class => "btn btn-danger btn-mini" %></nobr></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'новое ТО', new_service_path %>
+<%= link_to 'Новое ТО', new_service_path, :class => "btn" %>

@@ -1,25 +1,25 @@
-<h1>Listing warranties</h1>
+<h1>Список страховых фирм</h1>
 
-<table>
+<table class="table table-bordered">
   <tr>
-    <th>наименование страховой</th>
-    <th>адрес страховой</th>
+    <th>Наименование страховой</th>
+    <th>Адрес страховой</th>
     <th></th>
-    <th></th>
-    <th></th>
+
   </tr>
 
 <% @warranties.each do |warranty| %>
   <tr>
     <td><%= warranty.name %></td>
     <td><%= warranty.adds %></td>
-    <td><%= link_to 'Подробнее', warranty %></td>
-    <td><%= link_to 'Редактировать', edit_warranty_path(warranty) %></td>
-    <td><%= link_to 'Удалить', warranty, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+    <td>
+    <nobr><%= link_to 'Подробнее', warranty, :class => "btn btn-success btn-mini" %>
+    <%= link_to 'Редактировать', edit_warranty_path(warranty), :class => "btn btn-info btn-mini"  %>
+    <%= link_to 'Удалить', warranty, method: :delete, data: { confirm: 'Вы уверены?' }, :class => "btn btn-danger btn-mini" %></nobr></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Новая страховая фирма', new_warranty_path %>
+<%= link_to 'Новая страховая фирма', new_warranty_path, :class => "btn" %>

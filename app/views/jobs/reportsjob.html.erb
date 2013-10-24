@@ -1,11 +1,11 @@
-<h1>отчет о работе за периуд</h1>
+<h1>Отчет о работе за период</h1>
  <%= form_tag( reportsjob_jobs_path, :method => 'get') do %>
     <p>Выборка</p>
     <p>
      от  <%= text_field_tag 'data_min',value = nil, "data-behaviour"=>'datepicker'  %>
      до  <%= text_field_tag 'data_max',value = nil, "data-behaviour"=>'datepicker'  %>
     </p>
-    <%= submit_tag "Выбрать", :name => nil %>
+    <%= submit_tag "Выбрать", :name => nil, :class => "btn" %>
  <% end %>
 
 <script type="text/javascript">
@@ -21,9 +21,9 @@
         );
     })
 </script>
-<table>
+<table class="table table-bordered">
   <tr>
-    <th>Наиминование</th>
+    <th>Наименование</th>
     <th>Отработанные километры</th>
     <th>Отработанные часы</th>
 
@@ -42,4 +42,4 @@
 
 <br />
 
-<%= link_to 'New Job', new_job_path %>
+<%= link_to 'Новая работа', new_job_path, :class => "btn" %>

@@ -3,3 +3,5 @@
 #= require details
 #= require bootstrap
 #= require bootstrap-datepicker
+
+

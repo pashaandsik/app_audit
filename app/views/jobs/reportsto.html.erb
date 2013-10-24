@@ -1,11 +1,11 @@
-<h1>отчет о работе за периуд</h1>
+<h1>Отчет о работе за период</h1>
  <%= form_tag( reportsto_jobs_path, :method => 'get') do %>
     <p>Выборка</p>
     <p>
      от  <%= text_field_tag 'data_min',value = nil, "data-behaviour"=>'datepicker'  %>
      до  <%= text_field_tag 'data_max',value = nil, "data-behaviour"=>'datepicker'  %>
     </p>
-    <%= submit_tag "Выбрать", :name => nil %>
+    <%= submit_tag "Выбрать", :name => nil, :class => "btn" %>
  <% end %>
 
 <script type="text/javascript">
@@ -25,12 +25,12 @@
 <hr>
 <p> Отчет о ремонтах и деталях </p>
 <br />
-<table>
+<table class="table table-bordered">
   <tr>
-    <th>Наиминование машины </th>
+    <th>Наименование машины </th>
     <th>Причина поломки</th>
-    <th>Наиминование детали </th>
-    <th>дата поломки</th>
+    <th>Наименование детали </th>
+    <th>Дата поломки</th>
 
   </tr>
 
@@ -41,7 +41,7 @@
     <td><%= job.name_detall %></td>
     <td><%= job.date_repairs %></td>
 
-    <td><%= %></td>
+  
 
 
   </tr>
@@ -50,21 +50,21 @@
 <hr>
 <p> Отчет о техническом обслуживании </p>
 <br />
-<table>
+<table class="table table-bordered">
   <tr>
-    <th>Наиминование машины</th>
-    <th>Количества технического обслуживания </th>
-    <th>Отработанные часы</th>
-    <th>дата технического обслуживания</th>
+    <th>Наименование машины</th>
+    <th>Сезонное технического обслуживания </th>
+    <th>Технического обслуживания</th>
+    <th>Дата технического обслуживания</th>
 
   </tr>
 
   <% @jobs_rep.each do |job| %>
       <tr>
         <td><%= job.car.name%></td>
-        <!--<td><%= job.service.amount %></td>-->
+        <td><%= job.season_bool ? 'да' : 'нет' %></td>
         <td><%= job.to ? 'да' : 'нет' %></td>
-        <td><%= job.created_at.strftime("%Y-%m-%d ") %></td>
+        <td><%= job.created_at.strftime("%F") %></td>
 
 
 
@@ -72,4 +72,4 @@
   <% end %>
 </table>
 
-<%= link_to 'Новая работа', new_job_path %>
+<%= link_to 'Новая работа', new_job_path, :class => "btn" %>

@@ -2,45 +2,45 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Наиминование машины</b>
+  <b>Наиминование машины:</b>
   <%= @detail.car.name %>
 </p>
 
 <p>
-  <b>Страховая фирма</b>
+  <b>Страховая фирма:</b>
   <%= @detail.warranty.name %>
 </p>
 
 <p>
-  <b>время работы</b>
+  <b>Время работы:</b>
   <%= @detail.time_de_job %>
 </p>
 
 <p>
-  <b>все время работы</b>
+  <b>Все время работы:</b>
   <%= @detail.time_de_all %>
 </p>
 
 <p>
-  <b>время гарантии</b>
+  <b>Время гарантии:</b>
   <%= @detail.time_de_warranty %>
 </p>
 
 <p>
-  <b>отработано километров</b>
+  <b>Отработано километров:</b>
   <%= @detail.km_de_job %>
 </p>
 
 <p>
-  <b>общее количество километров</b>
+  <b>Общее количество километров:</b>
   <%= @detail.km_de_all %>
 </p>
 
 <p>
-  <b>количество отработанных километров по гарантия</b>
+  <b>Количество отработанных километров по гарантия:</b>
   <%= @detail.km_de_warranty %>
 </p>
 
 
-<%= link_to 'Редактировать', edit_detail_path(@detail) %> |
-<%= link_to 'Назад', details_path %>
+<%= link_to 'Редактировать', edit_detail_path(@detail), :class => "btn btn-info" %> |
+<%= link_to 'Назад', details_path, :class => "btn" %>

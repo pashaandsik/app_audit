@@ -1,30 +1,31 @@
+<h1>Подробнее</h1>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>наименование объекта</b>
+  <b>Наименование объекта:</b>
   <%= @car.name %>
 </p>
 
 <p>
-  <b>Объект подразделения</b>
+  <b>Объект подразделения:</b>
   <%= @car.object_subdivisiod %>
 </p>
 
 <p>
-  <b>Дата ввода в эксплуатацию</b>
+  <b>Дата ввода в эксплуатацию:</b>
   <%= @car.date_of_commissioning %>
 </p>
 
 <p>
-  <b>Дата гарантированново обслуживание:</b>
+  <b>Дата гарантированного обслуживания:</b>
   <%= @car.date_warranty %>
 </p>
 
 <p>
-  <b>Наиминование страховой:</b>
+  <b>Наименование страховой:</b>
   <%= @car.warranty.name %>
 </p>
 
 
-<%= link_to 'Редактировать', edit_car_path(@car) %> |
-<%= link_to 'Назад', cars_path %>
+<%= link_to 'Редактировать', edit_car_path(@car), :class => "btn btn-success" %> |
+<%= link_to 'Назад', cars_path, :class => "btn" %>

@@ -1,21 +1,19 @@
 <h1>Список всех деталей</h1>
 
-<table border="1">
+<table class="table table-bordered">
   <tr>
-    <th>наименование машины</th>
-    <th>наименование гарантии</th>
+    <th>Наименование машины</th>
+    <th>Наименование гарантии</th>
     <th>Наиминование детали</th>
 
     <!--<th>время работы</th>-->
 
-    <th>все время работы</th>
-    <th>время гарантии</th>
+    <th>Все время работы</th>
+    <th>Время гарантии</th>
     <!--<th>отработано километров</th>-->
-    <th>общее количество километров</th>
-    <th>количество отработанных километров по гарантия</th>
+    <th>Общее количество километров</th>
+    <th>Количество отработанных километров по гарантии</th>
 
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
@@ -31,9 +29,9 @@
     <td><%= detail.km_de_all %></td>
     <td><%= detail.km_de_warranty %></td>
 
-    <td><%= link_to 'Подробнее', detail %></td>
-    <td><%= link_to 'Редактировать', edit_detail_path(detail) %></td>
-    <td><%= link_to 'Удалить', detail, method: :delete %></td>
+    <td><nobr><%= link_to 'Подробнее', detail, :class => "btn btn-success btn-mini" %>
+    <%= link_to 'Редактировать', edit_detail_path(detail), :class => "btn btn-info btn-mini" %>
+    <%= link_to 'Удалить', detail, method: :delete, :class => "btn btn-danger btn-mini" %></nobr></td>
     <!--<td><%= link_to 'в ремонт', new_repair_url(detail_id: detail.id, car_id: detail.car_id  ) %></td>-->
 
 
@@ -44,4 +42,4 @@
 
 <br />
 
-<%= link_to 'Новая деталь', new_detail_path %>
+<%= link_to 'Новая деталь', new_detail_path, :class => "btn" %>

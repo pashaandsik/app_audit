@@ -1,13 +1,11 @@
-<h1>все отремонтированные </h1>
+<h1>Все отремонтированные </h1>
 
-<table>
+<table class="table table-bordered">
   <tr>
     <th>Причина</th>
-    <th>замена произошла</th>
-    <th>машинка</th>
-    <th>деталь</th>
-    <th></th>
-    <th></th>
+    <th>Замена произошла</th>
+    <th>Машинка</th>
+    <th>Деталь</th>
     <th></th>
   </tr>
 
@@ -18,13 +16,13 @@
 
     <td><%= repair.car.name %></td>
     <td><%= repair.detail.name_det %></td>
-    <td><%= link_to 'Подробнее', repair %></td>
-    <td><%= link_to 'Редактировать', edit_repair_path(repair) %></td>
-    <td><%= link_to 'Удалить', repair, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+    <td><nobr><%= link_to 'Подробнее', repair, :class => "btn btn-success btn-mini" %>
+    <%= link_to 'Редактировать', edit_repair_path(repair), :class => "btn btn-info btn-mini" %>
+    <%= link_to 'Удалить', repair, method: :delete, data: { confirm: 'Вы уверены?' }, :class => "btn btn-danger btn-mini" %></nobr></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'новый ремонт', new_repair_path %>
+<%= link_to 'Новый ремонт', new_repair_path, :class => "btn" %>

@@ -2,11 +2,11 @@
     = f.error_notification
 
     .form-inputs
-        = f.input :name , label: 'наименование'
-        = f.input :object_subdivisiod , label: 'объект подразделения'
-        = f.input :date_of_commissioning , label: 'дата ввод в эксплуатацию'
-        = f.input :date_warranty , label: 'дата гарантированного срока'
-        = f.input :warranty_id, collection: Warranty.order(:name), label: 'наименование страховой фирмы'
+        = f.input :name , label: 'Наименование'
+        = f.input :object_subdivisiod , label: 'Объект подразделения'
+        = f.input :date_of_commissioning , label: 'Дата ввода в эксплуатацию'
+        = f.input :date_warranty , label: 'Дата гарантированного срока'
+        = f.input :warranty_id, collection: Warranty.order(:name), label: 'Наименование страховой фирмы'
 
 
 

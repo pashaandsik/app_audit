@@ -13,3 +13,31 @@
  *= require bootstrap-datepicker
  *= require jquery.ui.all
  */
+table th {
+	font-size: 12px;
+	text-align: left;
+	font-weight: bold;
+	background: #fff;
+	background: -moz-linear-gradient(#ffffff, #ececec);
+	background: -ms-linear-gradient(#ffffff, #ececec);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #ececec));
+	background: -webkit-linear-gradient(#ffffff, #ececec);
+	background: -o-linear-gradient(#ffffff, #ececec);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ececec');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ececec')";
+	background: linear-gradient(#ffffff, #ececec);
+}
+.input {
+	margin-bottom: 15px;
+}
+a.btn, a.btn:visited a {
+	color: #333;
+}
+a.btn-success, a.btn-success:visited a, 
+a.btn-info, a.btn-info:visited a ,
+a.btn-danger, a.bbtn-danger:visited a  {
+	color: #fff!important;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+	color: #666;
+}

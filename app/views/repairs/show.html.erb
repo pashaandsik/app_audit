@@ -1,15 +1,17 @@
+<h1>Подробнее</h1>
 <p id="notice"><%= notice %></p>
 
+
 <p>
-  <b>Причина</b>
+  <b>Причина:</b>
   <%= @repair.cause %>
 </p>
 
 <p>
-  <b>машинка</b>
+  <b>Машинка:</b>
   <%= @repair.car.name %>
 </p>
 
 
-<%= link_to 'Редактировать', edit_repair_path(@repair) %> |
-<%= link_to 'Назад', repairs_path %>
+<%= link_to 'Редактировать', edit_repair_path(@repair), :class => "btn btn-info" %> |
+<%= link_to 'Назад', repairs_path, :class => "btn" %>

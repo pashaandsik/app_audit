@@ -1,15 +1,16 @@
+<h1>Подробнее</h1>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>наименование страховой</b>
+  <b>Наименование страховой:</b>
   <%= @warranty.name %>
 </p>
 
 <p>
-  <b>адрес страховой</b>
+  <b>Адрес страховой:</b>
   <%= @warranty.adds %>
 </p>
 
 
-<%= link_to 'Редактировать', edit_warranty_path(@warranty) %> |
-<%= link_to 'Назад', warranties_path %>
+<%= link_to 'Редактировать', edit_warranty_path(@warranty), :class => "btn btn-info" %> |
+<%= link_to 'Назад', warranties_path, :class => "btn" %>
