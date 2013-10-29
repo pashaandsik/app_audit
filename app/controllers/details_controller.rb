@@ -2,7 +2,7 @@ class DetailsController < ApplicationController
   # GET /details
   # GET /details.json
   def index
-    @details = Detail.all
+    @details = Detail.includes(:car,:warranty).all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,7 +10,7 @@ class DetailsController < ApplicationController
     end
   end
   def upgrade
-    @details = Detail.all
+    @details = Detail.includes(:car,:warranty).all
     @tile = Car.all
     #Detail.all.each do |detail|
     #  @dem= detail.id
@@ -29,7 +29,7 @@ class DetailsController < ApplicationController
   # GET /details/1
   # GET /details/1.json
   def show
-    @detail = Detail.find(params[:id])
+    @detail = Detail.includes(:car).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.haml

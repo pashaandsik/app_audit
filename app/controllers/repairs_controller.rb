@@ -2,7 +2,7 @@ class RepairsController < ApplicationController
   # GET /repairs
   # GET /repairs.json
   def index
-    @repairs = Repair.all
+    @repairs = Repair.includes(:car,:detail).all
 
     respond_to do |format|
       format.html # index.html.erb
