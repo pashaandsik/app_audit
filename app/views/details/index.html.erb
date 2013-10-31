@@ -20,9 +20,9 @@
 <% @details.each do |detail| %>
   <tr>
     <td><%= detail.car.name %></td>
-    <td><%= detail.warranty.name %></td>
+    <td><%= detail.warranty_id.nil? ? "Нет страховки":detail.warranty.name %></td>
     <td><%= detail.name_det %></td>
-    <td><%= detail.time_de_job %></td >
+    <td><%= detail.time_de_all %></td >
     <!--<td><%= detail.time_de_all %></td>-->
     <td><%= detail.time_de_warranty %></td>
     <!--<td><%= detail.km_de_job %></td>-->

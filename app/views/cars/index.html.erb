@@ -16,7 +16,7 @@
     <td><%= car.object_subdivisiod %></td>
     <td><%= car.date_of_commissioning %></td>
     <td><%= car.date_warranty %></td>
-    <td><%= car.warranty.name %></td>
+    <td><%= car.warranty_id.nil? ? "Нет страховки":car.warranty.name %></td>
     <td>
     <nobr>
     <%= link_to 'Подробнее', car, :class => "btn btn-success btn-mini" %>

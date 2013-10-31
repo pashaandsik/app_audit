@@ -5,6 +5,15 @@ class Job < ActiveRecord::Base
   has_many :details, through: :car
   attr_accessible :km_n, :m_ch, :repair_job, :to , :car_id  , :season_bool
   after_save :update_details_id
+  before_update :edit_job
+  def edit_job
+    Detail.where('details.car_id' => car_id ).each do |detail|
+      detail.km_de_all -= detail.km_de_job
+      detail.time_de_all -=  detail.time_de_job
+      detail.save
+    end
+  end
+
   def update_details_id
     if to
       servic_up_param
@@ -29,6 +38,7 @@ class Job < ActiveRecord::Base
     end
 
     Detail.where('details.car_id' => car_id ).each do |detail|
+     #p detail.job_id.nil?
      if detail.job_id.nil?
        detail.job_id = id
        if detail.time_de_all.nil?
@@ -43,17 +53,9 @@ class Job < ActiveRecord::Base
        detail.time_de_all += detail.time_de_job
        detail.km_de_all += detail.km_de_job
        detail.save
-     else
-      if detail.job_id = id
-        detail.time_de_all -= detail.time_de_job
-        detail.km_de_all -= detail.km_de_job
 
-        detail.km_de_job = km_n
-        detail.time_de_job = m_ch
-        detail.time_de_all += detail.time_de_job
-        detail.km_de_all += detail.km_de_job
-        detail.save
-      else
+     else
+
 
         detail.job_id = id
         if detail.time_de_all.nil?
@@ -68,9 +70,10 @@ class Job < ActiveRecord::Base
         detail.time_de_all += detail.time_de_job
         detail.km_de_all += detail.km_de_job
         detail.save
+
       end
       end
-    end
+
 
     end
 
@@ -94,12 +97,6 @@ class Job < ActiveRecord::Base
 
     end
   end
-  def save_km_mc
-    detail.km_de_job = km_n
-    detail.time_de_job = m_ch
-    detail.time_de_all += detail.time_de_job
-    detail.km_de_all += detail.km_de_job
-    detail.save
-  end
+
 end
 

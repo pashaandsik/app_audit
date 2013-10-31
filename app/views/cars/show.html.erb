@@ -23,7 +23,7 @@
 
 <p>
   <b>Наименование страховой:</b>
-  <%= @car.warranty.name %>
+  <%= @car.warranty_id.nil? ? "Нет страховки":@car.warranty.name %>
 </p>
 
 

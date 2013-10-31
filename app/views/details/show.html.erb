@@ -8,7 +8,7 @@
 
 <p>
   <b>Страховая фирма:</b>
-  <%= @detail.warranty.name %>
+  <%= @detail.warranty_id.nil? ? "Нет страховки":@detail.warranty.name %>
 </p>
 
 <p>
