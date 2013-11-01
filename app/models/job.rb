@@ -6,6 +6,33 @@ class Job < ActiveRecord::Base
   attr_accessible :km_n, :m_ch, :repair_job, :to , :car_id  , :season_bool
   after_save :update_details_id
   before_update :edit_job
+  with_options if: :km_n_and_m_ch? do |km|
+    km.validates :km_n, numericality: {only_integer: true, greater_than_or_equal_to: 0}
+    km.validates :m_ch, numericality: {only_integer: true, greater_than_or_equal_to: 1}
+  end
+  #validates :km_n,:m_ch, numericality: {only_integer: true, greater_than_or_equal_to: 1}, if: :km_n_and_m_ch?
+  validates :car, presence: true
+  validates_presence_of :repair_job, acceptance: true, :if => :repair_job
+  validates_presence_of :to, acceptance: true, :if => :to
+  validates_presence_of :season_bool, acceptance: true, :if => :season_bool
+  def km_n_and_m_ch?
+    unless repair_job
+    unless to
+    unless season_bool
+
+  end
+
+  #if :to
+  #  validates :to, acceptance: true
+  #elsif :season_bool
+  #  validates :season_bool, acceptance: true
+  #else
+  #  validates :km_n, numericality: {only_integer: true, greater_than_or_equal_to: 0}
+  #  validates :m_ch, numericality: {only_integer: true, greater_than_or_equal_to: 1}
+  #
+  #end
+
+
   def edit_job
     Detail.where('details.car_id' => car_id ).each do |detail|
       detail.km_de_all -= detail.km_de_job
