@@ -12,7 +12,7 @@
 
 <% @services.each do |service| %>
   <tr>
-    <td><%= service.car.name %></td>
+    <td><%= service.car.name.nil? ? "нет" : service.car.name %></td>
     <td><%= service.amount %></td>
     <td><%= service.season_sumer %></td>
     <td><%= service.season_winter %></td>
@@ -26,4 +26,3 @@
 
 <br />
 
-<%= link_to 'Новое ТО', new_service_path, :class => "btn" %>
